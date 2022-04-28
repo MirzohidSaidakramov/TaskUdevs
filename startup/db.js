@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const config = require('config');
+
 module.exports = function (){
-    mongoose.connect('mongodb://localhost/task')
+    mongoose.connect(config.get('MongoDBUrl'))
     .then(()=>{
         console.log('app has connected database');
     })

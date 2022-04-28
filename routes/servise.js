@@ -7,13 +7,34 @@ const Message = require('../models/message_model');
 
 /**
  * @swagger
- * /api/service/:
- *   POST:
- *     description: Create message for sending to a telegram channel/group.
- *     responses:
- *       201:
- *         description: Message has created.
- */
+ *     paths:         
+ *         /api/service: 
+ *                 post:
+ *                  summary: Creates a new message for sending Telegram
+ *                  consumes:
+ *                       - application/json
+ *                  requestBody:
+ *                  parameters:
+ *                       - in: body
+ *                         name: Message
+ *                         description: The message to create.
+ *                         schema:
+ *                             $ref: '#/definitions/Message'
+ *                  responses:
+ *                       201:
+ *                           description: Message has created
+ *                  definitions:
+ *                         Message: 
+ *                             type: object
+ *                         required:
+ *                             - text
+ *                         properties:
+ *                             text:
+ *                              type: string
+ *                             priority:
+ *                              type: string
+ */                 
+
 router.post('',async (req,res)=>{
     const message =  new Message( {
         text:req.body.text,

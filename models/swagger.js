@@ -1,5 +1,6 @@
 const swaggerDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
+const config = require('config');
 
     const swaggerOptions = {
         swaggerDefinition :{
@@ -11,11 +12,11 @@ const swaggerUi = require('swagger-ui-express');
                     name: "Mirzohid Saidakramov"
                 },
                 servers:[{
-                    url:"http://localhost:5000/"
+                    url:config.get('baseUrl')
                 }],
             }
         },
-        apis:["../routes/*.js"]
+        apis:["./routes/servise.js"]
     }
     const swaggerDocs = swaggerDoc(swaggerOptions);
  module.exports = swaggerDocs;
