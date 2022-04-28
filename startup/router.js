@@ -5,11 +5,13 @@ const swaggerUi = require('swagger-ui-express');
 const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
+const homeRouter = require('../routes/home');
 module.exports = function(app) {
     app.use(express.json());
     app.use(cors());
     app.use(helmet());
     app.use(compression());
+    app.use('',homeRouter);
     app.use('/api-docs/',swaggerUi.serve,swaggerUi.setup(swaggerDocs));
     app.use('/api/service/',serviceRouter);
 }
