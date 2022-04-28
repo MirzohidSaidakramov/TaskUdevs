@@ -1,7 +1,7 @@
 
 {
    "MongoDBUrl": "mongodb+srv://mirzohidgulshoda:gulshodaxonim@mylink.v7cqn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-   "baseUrl": "http://localhost:5000/"
+   "baseUrl": "https://udevstask.herokuapp.com/"
    
 
 
