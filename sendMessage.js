@@ -12,7 +12,7 @@ module.exports = async function () {
             priority: priority
         });
         messages.forEach(async (item, i) => {
-            await wait(55000 * i);
+            await wait(5000 * i);
             let res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
                 method: "POST",
                 headers: {
@@ -26,7 +26,7 @@ module.exports = async function () {
             const res1 = await res.json();
             console.log(res1);
         })
-        await wait(55000 * messages.length - 1)
+        await wait(5000 * messages.length - 1)
     }
     message('high');
     message('medium');
