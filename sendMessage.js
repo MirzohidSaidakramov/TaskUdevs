@@ -26,8 +26,8 @@ module.exports = async function () {
                     text: item.text
                 })
             });
-            const res1 = await res.json();
-            console.log(res1);
+           
+            
         })
         await wait(5000 * messages.length - 1)
     }
