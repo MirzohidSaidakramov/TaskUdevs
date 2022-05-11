@@ -22,7 +22,7 @@ const Message = require('../models/message_model');
  *                          description: low medium high
  *                  example:
  *                      text: Assalomu alaykum
- *                      priority: Low
+ *                      priority: low
  */
 
 /**
