@@ -16,7 +16,7 @@ const config = require('config');
                 }],
             }
         },
-        apis:["./routes/servise.js"]
+        apis:["./routes/*.js"]
     }
     const swaggerDocs = swaggerDoc(swaggerOptions);
  module.exports = swaggerDocs;

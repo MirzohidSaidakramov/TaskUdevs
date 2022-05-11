@@ -7,11 +7,14 @@ module.exports = async function () {
     
     const wait = value => new Promise(resolve => setTimeout(() => resolve(), value))
 
-    const message = async (priority) => {
-        const messages = await Message.find({
-            priority: priority
-        });
-        messages.forEach(async (item, i) => {
+    const messages = await Message.find();
+    const priority = ['high', 'medium', 'low'];
+    const messageSort =  messages.sort((x, y) => priority.indexOf(x.priority) - priority.indexOf(y.priority));
+    console.log(messageSort);
+
+    const message = async (message) => {
+       
+        message.forEach(async (item, i) => {
             await wait(5000 * i);
             let res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
                 method: "POST",
@@ -28,7 +31,5 @@ module.exports = async function () {
         })
         await wait(5000 * messages.length - 1)
     }
-    message('high');
-    message('medium');
-    message('low');
+    message(messageSort)
 }
