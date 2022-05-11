@@ -4,35 +4,42 @@ const Message = require('../models/message_model');
 
 
 
-
 /**
  * @swagger
- *     paths:         
+ *      components:
+ *          schemas:
+ *              Message:
+ *                  type: object
+ *                  required:
+ *                      -text
+ *                      -priority
+ *                  properties:
+ *                      text:
+ *                          type: string
+ *                          description: Message's text
+ *                      priority:
+ *                          type: string
+ *                          description: low medium high
+ *                  example:
+ *                      text: Assalomu alaykum
+ *                      priority: Low
+ */
+
+/**
+ * @swagger     
  *         /api/service: 
  *                 post:
  *                  summary: Creates a new message for sending Telegram
- *                  consumes:
- *                       - application/json
  *                  requestBody:
- *                  parameters:
- *                       - in: body
- *                         name: Message
- *                         description: The message to create.
- *                         schema:
- *                             $ref: '#/definitions/Message'
+ *                      required: true
+ *                      content:
+ *                          application/json:
+ *                              schema:
+ *                                   $ref: '#/components/schemas/Message'
  *                  responses:
  *                       201:
  *                           description: Message has created
- *                  definitions:
- *                         Message: 
- *                             type: object
- *                         required:
- *                             - text
- *                         properties:
- *                             text:
- *                              type: string
- *                             priority:
- *                              type: string
+ *                
  */                 
 
 router.post('',async (req,res)=>{
