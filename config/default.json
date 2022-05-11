@@ -1,8 +1,10 @@
 
 {
-   "MongoDBUrl": "mongodb://localhost/virtualdars",
-   "baseUrl": "http://localhost:5000/",
+
+   "MongoDBUrl": "mongodb+srv://mirzohidgulshoda:gulshodaxonim@mylink.v7cqn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+   "baseUrl": "https://udevstask.herokuapp.com/",
    "url":"mongodb+srv://mirzohidgulshoda:gulshodaxonim@mylink.v7cqn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
 
    
 
