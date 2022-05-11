@@ -5,7 +5,8 @@ const sendMessage = require('./sendMessage');
 
 require('./startup/db')();
 require('./startup/router')(app);
-sendMessage()
+ sendMessage()
+
 
 
 const port = process.env.PORT || 5000
